@@ -69,7 +69,12 @@ input_data = pd.DataFrame([{
 prediction = model.predict(input_data)[0]
 
 probability = model.predict_proba(input_data)[0][1]
-
+if probability < 0.40:
+    risk_level = "LOW"
+elif probability < 0.70:
+    risk_level = "MEDIUM"
+else:
+    risk_level = "HIGH"
 
 # Display result
 print("\n" + "=" * 40)
@@ -80,5 +85,6 @@ else:
     print("Prediction: ON TIME")
 
 print(f"Probability of delay: {probability * 100:.2f}%")
+print(f"Risk Level: {risk_level}")
 
 print("=" * 40)
