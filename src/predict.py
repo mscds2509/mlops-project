@@ -69,7 +69,7 @@ input_data = pd.DataFrame([{
 prediction = model.predict(input_data)[0]
 
 probability = model.predict_proba(input_data)[0][1]
-if probability < 0.40:
+if probability > 0.40:
     risk_level = "LOW"
 elif probability < 0.70:
     risk_level = "MEDIUM"
