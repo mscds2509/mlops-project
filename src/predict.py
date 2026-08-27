@@ -76,7 +76,7 @@ elif probability < 0.70:
 else:
     risk_level = "HIGH"
 
-# Display result
+# Display results
 print("\n" + "=" * 40)
 
 if prediction == 1:
